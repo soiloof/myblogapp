@@ -21,21 +21,7 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link" href="https://getbootstrap.com/docs/4.3/content/images/">BootStrapページ</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -45,15 +31,20 @@
   </div>
 </nav>
     <div class="container">
-    <!--<h1>ようこそなでがたのブログへ</h1>-->
-    <h2>最新の投稿</h2>
+    <h1 class="text-center">ようこそなでがたのブログへ</h1>
+    <br /><br />
+    {% load static %}
+    <img src="{% static 'posts/thinkingPeople.png' %}" class = "img-fluid rounded mx-auto d-block" style="max-height: 200px;">
+    <hr>
+    <h3>最新の投稿</h3>
     {% for post in posts.all %}
         #{{ post.id }}:
         <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
         <br /><br />
         {{ post.published }}
         <br /><br />
-        <img src="{{ post.image.url }}" class = "img-fluid rounded" />
+        <img src="{{ post.image.url }}" class = "img-fluid rounded" style="max-height: 200px;"/>
+
         <br /><br />
 
         {{ post.summary }}
