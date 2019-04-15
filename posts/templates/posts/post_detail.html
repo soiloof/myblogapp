@@ -19,7 +19,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="https://getbootstrap.com/docs/4.3/content/images/">BootStrapページ</a>
@@ -35,7 +35,7 @@
     <h1 class="text-center">ようこそなでがたのブログへ</h1>
     <br /><br />
     {% load static %}
-    <img src="{% static 'posts/thinkingPeople.png' %}" class = "img-fluid rounded" style="max-height: 200px;">
+    <img src="{% static 'posts/thinkingPeople.png' %}" class = "img-fluid rounded mx-auto d-block" style="max-height: 200px;">
     <hr>
         #{{ post.id }}:
         <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
